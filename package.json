@@ -7,6 +7,10 @@
   "keywords": [
     "platzi"
   ],
-  "scripts": {},
-  "devDependencies": {}
+  "scripts": {
+    "start": "live-server"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
 }
