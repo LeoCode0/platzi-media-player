@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <title>Prototype</title>
+  </head>
+
+  <body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <script>
+      // Un objeto común y corriente
+      // const gibraltar = {
+      //   name: "Gibraltar"
+      // }
+
+      // gibraltar.saludar = function(){
+      //   console.log(`Hola soy ${this.name}`)
+      // }
+
+      // gibraltar.saludar()
+
+      // const octane = {
+      //   name: "Octane"
+      // }
+
+      // octane.saludar = function(){
+      //   console.log(`Hola soy ${this.name}`)
+      // }
+
+      // octane.saludar()
+
+      // Seamos un poco más eficientes
+      // function Hero (name){
+      //   const hero = {
+      //     name: name
+      //   }
+      //   hero.saludar = function (){
+      //     console.log(`Hola soy ${this.name}`)
+      //   }
+
+      //   return hero
+      // }
+      
+      // const gibraltar = Hero('Gibraltar')
+      // gibraltar.saludar()
+
+      // const octane = Hero('Octane')
+      // octane.saludar()
+     
+      // Aun podemos mejorar más y evitar tener que crear la misma función cada vez
+      // const heroMethods = {
+      //   saludar: function(){
+      //     console.log(`Hola soy ${this.name}`)
+      //   },
+      // }
+      // function Hero (name){
+      //   const hero = {
+      //     name: name
+      //   }
+      //   hero.saludar = heroMethods.saludar
+
+      //   return hero
+      // }
+      
+      // const gibraltar = Hero('Gibraltar')
+      // gibraltar.saludar()
+
+      // const octane = Hero('Octane')
+      // octane.saludar()
+      
+      // Object.create
+      // const nuevoObjeto = Object.create(objeto)
+      // const heroMethods = {
+      //   saludar: function(){
+      //     console.log(`soy leyenda! ${this.name}`)
+      //   },
+      // }
+      // function Hero (name){
+      //   const hero = Object.create(heroMethods)
+      //   hero.name = name
+      //   hero.saludar = heroMethods.saludar
+
+      //   return hero
+      // }
+      
+      // const gibraltar = Hero('Gibraltar')
+      // gibraltar.saludar()
+
+      // const octane = Hero('Octane')
+      // octane.saludar()
+      
+
+      // Los métodos de hero dentro de Hero
+      // const heroMethods = {
+      //   saludar: function(){
+      //     console.log(`soy leyenda! ${this.name}`)
+      //   },
+      // }
+      // function Hero (name){
+      //   const hero = Object.create(Hero.prototype)
+      //   hero.name = name
+
+      //   return hero
+      // }
+
+      // Hero.prototype.saludar = function() {
+      //   console.log(`Hola soy leyenda! ${this.name}`)
+      // }
+      
+      // const gibraltar = Hero('Gibraltar')
+      // gibraltar.saludar()
+
+      // const octane = Hero('Octane')
+      // octane.saludar()
+      
+      
+      // new es un atajo (azucar sintactica) para llevar Hero.prototype al objeto que estamos creando
+      function Hero (name){
+        // this = Object.create(Hero.prototype)
+        this.name = name
+        // return this
+      }
+
+      Hero.prototype.saludar = function() {
+        console.log(`New: ${this.name}`)
+      }
+      
+      const gibraltar = new Hero('Gibraltar')
+      gibraltar.saludar()
+
+      const octane = new Hero('Octane')
+      octane.saludar()
+   
+    </script>
+  </body>
+</html>
